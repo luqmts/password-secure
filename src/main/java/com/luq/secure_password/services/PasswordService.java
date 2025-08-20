@@ -12,10 +12,10 @@ import java.util.ArrayList;
 @Service
 public class PasswordService {
     @Autowired
-    PasswordMapper passwordMapper;
+    private PasswordMapper passwordMapper;
 
     public PasswordDTO validatePassword(PasswordDTO passwordDTO){
-        Password password = passwordMapper.toObject(passwordDTO);
+        Password password = passwordMapper.toEntity(passwordDTO);
         ArrayList<RuntimeException> exceptions = new ArrayList<>();
 
         try { password.validate_minimal_length(); }

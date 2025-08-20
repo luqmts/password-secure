@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class PasswordMapper {
-    public Password toObject(PasswordDTO passwordDTO){
+    public Password toEntity(PasswordDTO passwordDTO){
         return new Password(passwordDTO.password());
     }
 
