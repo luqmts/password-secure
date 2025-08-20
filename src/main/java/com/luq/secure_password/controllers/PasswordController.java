@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(("/validate-password"))
+@RequestMapping("/validate-password")
 public class PasswordController {
     @Autowired
     PasswordService passwordService;
