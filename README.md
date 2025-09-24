@@ -66,8 +66,29 @@ atualizando as variáveis MINIMAL_LENGTH, MINIMAL_UPPERCASE, MINIMAL_LOWERCASE, 
 
 Caso a senha validada for segura, a própria senha será retornada com um código de status 200, indicando sucesso, como no exemplo acima.
 
-Se a senha não for segura, será retornado um erro 400 e os critérios que não forem atendidos serão indicados no campo _message_.
+Se a senha não for segura, será retornado um erro 400 e os critérios que não forem atendidos serão indicados no campo _message_, como no exemplo abaixo:
 
+<h3 id="get-suppliers">POST /validate-password</h3>
+
+#### REQUEST
+
+```json
+{
+  "password": "weakpas"
+}
+```
+
+#### RESPONSE
+
+```json
+{
+  "timestamp": "2025-09-24T19:17:31.362+00:00",
+  "status": 400,
+  "error": "Bad Request",
+  "message": "Validation failed due to following problems: Password have not enough length expected (8 expected); Password expect at least 1 upper case character(s); Password expect at least 1 digit(s); Password expect at least 1 special character(s);",
+  "path": "/validate-password"
+}
+```
 ---
 
 <h1 id="description-en-us">🇺🇸 Description</h1>
@@ -119,4 +140,26 @@ updating variables MINIMAL_LENGTH, MINIMAL_UPPERCASE, MINIMAL_LOWERCASE, MINIMAL
 
 If validated password is safe, the same password will be returned with a 200 status code, suggesting success, just like example above
 
-If password isn't safe, will be returned an error 400 and criteria that weren't fulfilled will be shown on field message.
+If password isn't safe, will be returned an error 400 and criteria that weren't fulfilled will be shown on field message, like exemplo bellow.
+
+<h3 id="get-suppliers">POST /validate-password</h3>
+
+#### REQUEST
+
+```json
+{
+  "password": "weakpas"
+}
+```
+
+#### RESPONSE
+
+```json
+{
+  "timestamp": "2025-09-24T19:17:31.362+00:00",
+  "status": 400,
+  "error": "Bad Request",
+  "message": "Validation failed due to following problems: Password have not enough length expected (8 expected); Password expect at least 1 upper case character(s); Password expect at least 1 digit(s); Password expect at least 1 special character(s);",
+  "path": "/validate-password"
+}
+```
